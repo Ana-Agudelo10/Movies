@@ -1,20 +1,28 @@
-<p>Hola Frontends</p>
-<!-- //Iteracion de los datos -->
-<!-- <table class="table">  
+<h2>Listado de Productos</h2>
+
+<table class="table table-striped">
   <thead>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Edad</th>
-    </thead>
-    <tbody>
-      <tr *ngFor = "let modelo of modelo">
-        <td>{{ modelo.id }}</td>
-        <td>{{ modelo.nombre }}</td>
-        <td>{{ modelo.apellido }}</td>
-        <td>{{ modelo.edad }}</td>
-      </tr>
-    </tbody>
-  </table> -->
-  <!-- <th scope="col">Acciones</th> -->
-  <!-- <td><button class="btn btn-danger" (click)="eliminarPersona(i)">Eliminar</button></td> -->
+    <tr>
+      <th>#</th>
+      <th>Titulo</th>
+      <th>Descripción</th>
+      <th>Genero</th>
+      <th>Image</th>
+      <th>Fecha</th>
+      <th>Creador</th>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos; let i = index">
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.title }}</td>
+      <td>{{ producto.description }}</td>
+      <td>{{ producto.genero }}</td>
+      <td>{{ producto.image }}</td>
+      <td>{{ producto.date }}</td>
+      <td>{{ producto.creator }}</td>
+      <td>{{ producto.video }}</td>
+    </tr>
+  </tbody>
+</table>
