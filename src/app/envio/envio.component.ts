@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'; // Importa el módulo común de 
 import { Product } from '../modelo';
 import {Router, ActivatedRoute} from '@angular/router'; // Importa Router y ActivatedRoute para la navegación y obtención de parámetros de ruta
 // guardado de los datos al componente lista que es donde a iniciado angular
+//Importar forms modulo para el servicio de enviar fomulario
 
 
 @Component({
