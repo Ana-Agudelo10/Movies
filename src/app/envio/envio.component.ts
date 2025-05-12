@@ -35,7 +35,7 @@ export class EnvioComponent implements OnInit{
 
   guardar(){
     delete this.productos.id;
-    this.productosService.Guardar1(this.productos).subscribe({
+    this.productosService.guardar1(this.productos).subscribe({
       next: (data: Product) => {
         console.log('Producto guardado:', data);
         this.router.navigate(['/lista']); // Limpiar el formulario después de guardar

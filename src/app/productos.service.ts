@@ -19,7 +19,7 @@ export class ProductosService {
     return this.http1.get<Product[]>(this.API_URL);
   }
 
-  Guardar1(product: Product): Observable<Product> {
+  guardar1(product: Product): Observable<Product> {
     return this.http1.post<Product>(this.API_URL, product);
   }
 }
