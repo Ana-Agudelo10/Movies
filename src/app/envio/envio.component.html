@@ -1,15 +1,53 @@
-<p>envio works!</p>
+<p class="alert alert-success text-center">¡Envío exitoso!</p>
 
-<div class="container">
-    <button type="submit" class="btn btn-success btn-block" (click)="guardar()">GUARDAR</button>
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Registrar Pelicula</h3>
 
-    <form action="">
-        <label>ID</label>
-        <!-- Directiva es ng module para enviar los datos propio de angular -->
-        <input type="text" class="form-control" [(ngModel)]="productos.id" name="id" placeholder="ID" autofocus>
-        <label>Titulo</label>
-        <textarea type="text" class="form-control" [(ngModel)]="productos.title" name="title" placeholder="Titulo"></textarea>
-        <label>Fecha</label>
-        <input type="date" class="form-control" [(ngModel)]="productos.date" name="date" placeholder="Fecha" autofocus>
-    </form>
+      <form (ngSubmit)="guardar()">
+        <div class="mb-3">
+          <label for="id" class="form-label">ID</label>
+          <input type="hidden" id="id" class="form-control" [(ngModel)]="productos.id" name="id" placeholder="ID" autofocus>
+        </div>
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <textarea id="title" class="form-control" [(ngModel)]="productos.title" name="title" placeholder="Título"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea id="description" class="form-control" [(ngModel)]="productos.description" name="description" placeholder="Descripcion"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="genero" class="form-label">Genero</label>
+            <input type="text" id="genero" class="form-control" [(ngModel)]="productos.genero" name="genero" placeholder="Genero">
+        </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Imagen</label>
+            <textarea id="image" class="form-control" [(ngModel)]="productos.image" name="image" placeholder="Link de la imagen"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="date" class="form-label">Fecha</label>
+          <input type="date" id="date" class="form-control" [(ngModel)]="productos.date" name="date">
+        </div>
+
+        <div class="mb-3">
+          <label for="creator" class="form-label">Creador</label>
+          <input type="text" id="creator" class="form-control" [(ngModel)]="productos.creator" name="creator" placeholder="Creador">
+        </div>
+
+        <div class="mb-3">
+            <label for="video" class="form-label">Video</label>
+            <textarea id="video" class="form-control" [(ngModel)]="productos.video" name="video" placeholder="Link del video"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">GUARDAR</button>
+      </form>
+    </div>
+  </div>
 </div>

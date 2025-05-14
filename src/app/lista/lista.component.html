@@ -1,28 +1,46 @@
-<h2>Listado de Productos</h2>
-<a [routerLink]="['/editar/edit']">CREAR FORMULARIO</a>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Titulo</th>
-      <th>Descripción</th>
-      <th>Genero</th>
-      <th>Image</th>
-      <th>Fecha</th>
-      <th>Creador</th>
-      <th>Video</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let producto of productos; let i = index">
-      <td>{{ producto.id }}</td>
-      <td>{{ producto.title }}</td>
-      <td>{{ producto.description }}</td>
-      <td>{{ producto.genero }}</td>
-      <td>{{ producto.image }}</td>
-      <td>{{ producto.date }}</td>
-      <td>{{ producto.creator }}</td>
-      <td>{{ producto.video }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Listado de Peliculas</h2>
+    <a [routerLink]="['/editar/edit']" class="btn btn-primary">CREAR PELICULA</a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Género</th>
+          <th>Imagen</th>
+          <th>Fecha</th>
+          <th>Creador</th>
+          <th>Video</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos; let i = index">
+          <td>{{ producto.id }}</td>
+          <td>{{ producto.title }}</td>
+          <td>{{ producto.description }}</td>
+          <td>{{ producto.genero }}</td>
+
+          <!-- Imagen visible desde URL -->
+          <td>
+            <img *ngIf="producto.image" [src]="producto.image" alt="imagen" class="img-thumbnail" style="max-width: 100px;">
+          </td>
+
+          <td>{{ producto.date | date: 'yyyy-MM-dd' }}</td>
+          <td>{{ producto.creator }}</td>
+
+          <!-- Link al video si hay -->
+          <td>
+            <a *ngIf="producto.video" [href]="producto.video" target="_blank" class="btn btn-outline-info btn-sm">
+              Ver Video
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
