@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core'; // Importa los módulos neces
 import { ProductosService } from '../productos.service'; // Importa el servicio de productos
 import { Product } from '../modelo';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; 
 
 // OnInit (se inicializa el componente)
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.css']
 })

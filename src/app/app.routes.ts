@@ -14,7 +14,7 @@ export const routes: Routes = [
     title: 'Desde app componente',
   },
   {
-    path: '/editar/edit',
+    path: 'editar/edit',
     component: EnvioComponent,
     title: 'Desde app componente',
   },
