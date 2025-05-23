@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EnvioComponent } from './envio.component';
+import { RouterModule } from '@angular/router';
+
+describe('EnvioComponent', () => {
+  let component: EnvioComponent;
+  let fixture: ComponentFixture<EnvioComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [EnvioComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(EnvioComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

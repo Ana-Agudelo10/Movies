@@ -1,0 +1,60 @@
+<p class="alert alert-success text-center">¡Envío exitoso!</p>
+
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Registrar Pelicula</h3>
+
+      <form (ngSubmit)="onSubmit()">
+        <!-- ID oculto -->
+        <input type="hidden" [(ngModel)]="productos.id" name="id">
+
+        <!-- Título -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Título</label>
+          <textarea id="title" class="form-control" [(ngModel)]="productos.title" name="title"></textarea>
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea id="description" class="form-control" [(ngModel)]="productos.description" name="description"></textarea>
+        </div>
+
+        <!-- Género -->
+        <div class="mb-3">
+          <label for="genero" class="form-label">Género</label>
+          <input type="text" id="genero" class="form-control" [(ngModel)]="productos.genero" name="genero">
+        </div>
+
+        <!-- Imagen -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Imagen</label>
+          <textarea id="image" class="form-control" [(ngModel)]="productos.image" name="image"></textarea>
+        </div>
+
+        <!-- Fecha -->
+        <div class="mb-3">
+          <label for="date" class="form-label">Fecha</label>
+          <input type="date" id="date" class="form-control" [(ngModel)]="productos.date" name="date">
+        </div>
+
+        <!-- Creador -->
+        <div class="mb-3">
+          <label for="creator" class="form-label">Creador</label>
+          <input type="text" id="creator" class="form-control" [(ngModel)]="productos.creator" name="creator">
+        </div>
+
+        <!-- Video -->
+        <div class="mb-3">
+          <label for="video" class="form-label">Video</label>
+          <textarea id="video" class="form-control" [(ngModel)]="productos.video" name="video"></textarea>
+        </div>
+
+        <!-- Botones con control de acción -->
+        <button type="submit" class="btn btn-success w-100 mb-2" (click)="accion = 'guardar'">GUARDAR</button>
+        <button type="submit" class="btn btn-primary w-100" (click)="accion = 'editar'">MODIFICAR</button>
+      </form>
+    </div>
+  </div>
+</div>
